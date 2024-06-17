@@ -7,10 +7,11 @@ body, h1, h2, p, ul {
 body {
     font-family: Arial, sans-serif;
     color: #333;
-    background-color: #f9f9f9;
+    background-image: url('images/background.jpg'); /* Путь к вашему изображению */
+    background-size: cover; /* Заполнение всего фона */
+    background-position: center; /* Центрирование изображения */
     line-height: 1.6;
 }
-
 header {
     background: #ffffff;
     padding: 20px 0;
