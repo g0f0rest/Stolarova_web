@@ -92,6 +92,18 @@ form label {
     display: block;
     margin-bottom: 5px;
 }
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px 0;
+}
+
+.social-icons img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
 
 form input[type="text"],
 form input[type="email"],
