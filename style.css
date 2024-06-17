@@ -12,7 +12,7 @@ body {
 }
 
 header {
-    background: linear-gradient(#e66465, #9198e5);
+    background: linear-gradient(to right, #ff6f61, #d84315);
     padding: 20px 0;
     text-align: center;
 }
@@ -24,7 +24,7 @@ header .header-content h1 {
 
 header .header-content p {
     margin: 10px 0 0;
-    font-size: 1.2em;яё
+    font-size: 1.2em;
 }
 
 nav {
@@ -54,8 +54,34 @@ nav ul li a {
     margin: 0 auto;
 }
 
+.slider {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.slider img {
+    width: 100%;
+    height: auto;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.slider img.active {
+    display: block;
+}
+
 .section {
     margin-bottom: 40px;
+}
+
+.section-divider {
+    border-top: 2px solid #ff6f61;
+    margin: 40px 0;
 }
 
 .section h2 {
@@ -67,6 +93,7 @@ nav ul li a {
 .portfolio p,
 .contact p {
     margin: 10px 0;
+    font-size: 1.1em;
 }
 
 .portfolio img {

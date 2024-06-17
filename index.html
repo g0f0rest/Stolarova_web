@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Марина Столярова</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
 </head>
 <body>
     <header>
@@ -21,6 +23,12 @@
         </ul>
     </nav>
     <div class="container">
+        <!-- Слайдер изображений -->
+        <div class="slider">
+            <img src="images/online_course.jpg" alt="Онлайн курс по алгебре">
+            <img src="images/study_materials.jpg" alt="Учебные материалы для подготовки к ЕГЭ">
+            <img src="images/geometry_lessons.jpg" alt="Видеоуроки по геометрии">
+        </div>
         <div class="section" id="experience">
             <h2>Опыт работы</h2>
             <div class="experience">
@@ -30,6 +38,7 @@
                 <p>Индивидуальные занятия по математике, подготовка к олимпиадам и ЕГЭ.</p>
             </div>
         </div>
+        <div class="section-divider"></div>
         <div class="section" id="portfolio">
             <h2>Портфолио</h2>
             <div class="portfolio">
@@ -41,13 +50,14 @@
                 <img src="images/geometry_lessons.jpg" alt="Видеоуроки по геометрии">
             </div>
         </div>
+        <div class="section-divider"></div>
         <div class="section" id="contact">
             <h2>Контакты</h2>
             <div class="contact">
                 <p>Email: <a href="mailto:a007a2000@gmail.com">a007a2000@gmail.com</a></p>
                 <p>Телефон: <a href="tel:+79878141021">+79878141021</a></p>
-                <!-- Форма обратной связи -->                  
-                <form action="https://formspree.io/f/mpzvvnop" method="POST">                                                                                                                                                                                                                                                                                                                                                           
+                <!-- Форма обратной связи -->
+                <form action="https://formspree.io/f/mpzvvnop" method="POST">
                     <label for="name">Имя:</label><br>
                     <input type="text" id="name" name="name" required><br>
                     <label for="email">Email:</label><br>
@@ -67,6 +77,5 @@
     <footer>
         <p>&copy; 2024 Марина Столярова</p>
     </footer>
-    <script src="script.js"></script>
 </body>
 </html>
