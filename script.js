@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Auto slide change every 5 seconds
-    setInterval(nextSlide, 5000);
+    setInterval(nextSlide, 10000);
 
     // Smooth scrolling for nav links
     $('nav ul li a').on('click', function(e) {
