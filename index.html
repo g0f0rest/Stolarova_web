@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <h1>Марина Столярова </h1>
+        <h1>Марина Столярова</h1>
         <p>Ваш преподаватель по математике</p>
     </header>
     <div class="container">
@@ -25,35 +25,42 @@
             <h2>Портфолио</h2>
             <div class="portfolio">
                 <p><strong>Проект 1:</strong> Онлайн курс по алгебре</p>
+                <img src="images/online_course.jpg" alt="Онлайн курс по алгебре">
                 <p><strong>Проект 2:</strong> Учебные материалы для подготовки к ЕГЭ</p>
+                <img src="images/study_materials.jpg" alt="Учебные материалы для подготовки к ЕГЭ">
                 <p><strong>Проект 3:</strong> Видеоуроки по геометрии</p>
+                <img src="images/geometry_lessons.jpg" alt="Видеоуроки по геометрии">
             </div>
         </div>
-       <div class="contact">
-    <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
-    <p>Телефон: <a href="tel:+1234567890">+1234567890</a></p>
-
-    <!-- Форма обратной связи -->
-    <form action="mailto:youremail@example.com" method="post" enctype="text/plain">
-        <label for="name">Имя:</label><br>
-        <input type="text" id="name" name="name" required><br>
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email" required><br>
-        <label for="message">Сообщение:</label><br>
-        <textarea id="message" name="message" rows="4" required></textarea><br>
-        <input type="submit" value="Отправить">
-    </form>
-    
-    <!-- Иконки для Telegram и WhatsApp -->
-    <div class="social-icons">
-        <a href="https://t.me/mariehast" target="_blank"><img src="icontelegram.png" alt="Telegram"></a>
-        <a href="https://wa.me/1234567890" target="_blank"><img src="whatsapp.png" alt="WhatsApp"></a>
-    </div>
-</div>
-
+        <div class="section" id="contact">
+            <h2>Контакты</h2>
+            <div class="contact">
+                <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
+                <p>Телефон: <a href="tel:+1234567890">+1234567890</a></p>
+                <p>LinkedIn: <a href="https://www.linkedin.com/in/yourprofile" target="_blank">Ваш профиль</a></p>
+                
+                <!-- Форма обратной связи -->
+                <form action="https://formspree.io/f/your_form_id" method="POST">
+                    <label for="name">Имя:</label><br>
+                    <input type="text" id="name" name="name" required><br>
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email" required><br>
+                    <label for="message">Сообщение:</label><br>
+                    <textarea id="message" name="message" rows="4" required></textarea><br>
+                    <input type="submit" value="Отправить">
+                </form>
+                
+                <!-- Иконки для Telegram и WhatsApp -->
+                <div class="social-icons">
+                    <a href="https://telegram.me/yourtelegram" target="_blank"><img src="images/telegram.png" alt="Telegram"></a>
+                    <a href="https://wa.me/1234567890" target="_blank"><img src="images/whatsapp.png" alt="WhatsApp"></a>
+                </div>
+            </div>
+        </div>
     </div>
     <footer>
         <p>&copy; 2024 Столярова Марина</p>
+        <p>&copy; 2024 Ваше Имя</p>
     </footer>
     <script src="script.js"></script>
 </body>
