@@ -7,66 +7,29 @@ body, h1, h2, p, ul {
 body {
     font-family: Arial, sans-serif;
     color: #333;
-    background-image: url('images/background.jpg'); /* Путь к вашему изображению */
-    background-size: cover; /* Заполнение всего фона */
-    background-position: center; /* Центрирование изображения */
+    background-color: #f4f4f4;
     line-height: 1.6;
 }
+
 header {
-    background: #99b4b7;
-    padding: 40px 0;
+    background: #4CAF50;
+    color: #fff;
+    padding: 20px 0;
     text-align: center;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-header h1 {
-    margin: 0;
-    font-size: 2.5em;
-    background: #99b4b7;
-}
-
-header p {
-    margin: 20 px 0 0;
-    font-size: 1.2em;
-}
-
-nav {
-    background: #86a3b4;
-    padding: 15px 0;
-    text-align: center;
-}
-
-nav ul {
-    list-style: none;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 100px;
-}
-
-nav ul li a {
-    color: ##becbce;
-    text-decoration: none;
-    font-size: 1.1em;
 }
 
 .container {
     padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
-    background: #becbce;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .section {
     margin-bottom: 40px;
     padding: 20px;
-    border-bottom: 1px solid #ccc;
-}
-
-.section:last-child {
-    border-bottom: none;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
 
 .section h2 {
@@ -108,7 +71,7 @@ nav ul li a {
 }
 
 .contact form button {
-    background-color: #ff6f61;
+    background-color: #4CAF50;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -117,7 +80,7 @@ nav ul li a {
 }
 
 .contact form button:hover {
-    background-color: #d84315;
+    background-color: #45a049;
 }
 
 .social-icons {
@@ -131,11 +94,69 @@ nav ul li a {
 }
 
 footer {
-    background: #333;
+    background: #4CAF50;
     color: white;
     text-align: center;
     padding: 10px 0;
     position: fixed;
     width: 100%;
     bottom: 0;
+}
+
+/* Slider styles */
+.slider {
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.slider-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.slide img {
+    width: 100%;
+    vertical-align: middle;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
 }

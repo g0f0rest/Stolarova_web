@@ -1,30 +1,17 @@
+let slideIndex = 0;
+showSlides();
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Slider functionality
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.slider img');
-    
-    function showSlide(index) {
-        slides.forEach((slide) => {
-            slide.classList.remove('active');
-        });
-        slides[index].classList.add('active');
+function showSlides() {
+    let slides = document.getElementsByClassName("slide");
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
     }
-    
-    function nextSlide() {
-        currentSlide = (currentSlide + 1) % slides.length;
-        showSlide(currentSlide);
-    }
-    
-    // Auto slide change every 5 seconds
-    setInterval(nextSlide, 10000);
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    slides[slideIndex-1].style.display = "block";  
+    setTimeout(showSlides, 3000); // Change image every 3 seconds
+}
 
-    // Smooth scrolling for nav links
-    $('nav ul li a').on('click', function(e) {
-        e.preventDefault();
-        const target = $(this).attr('href');
-        $('html, body').animate({
-            scrollTop: $(target).offset().top
-        }, 1000);
-    });
-});
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}

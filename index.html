@@ -3,70 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Марина Столярова</title>
+    <title>Stolarova</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="script.js"></script>
 </head>
 <body>
     <header>
-        <div class="header-content">
-            <h1>Марина Столярова</h1>
-            <p>Ваш преподаватель по математике</p>
-        </div>
+        <h1>Марина Столярова</h1>
+        <p>Ваш преподаватель по математике</p>
     </header>
-    <nav>
-        <ul>
-            <li><a href="#experience">Опыт работы</a></li>
-            <li><a href="#portfolio">Портфолио</a></li>
-            <li><a href="#contact">Контакты</a></li>
-        </ul>
-    </nav>
     <div class="container">
-        <!-- Слайдер изображений -->
+        <!-- Слайдер -->
         <div class="slider">
-            <img src="images/1.jpg" alt="Онлайн курс по алгебре">
-            <img src="images/2.jpg" alt="Учебные материалы для подготовки к ЕГЭ">
-            <img src="images/3.jpg" alt="Видеоуроки по геометрии">
+            <div class="slider-container">
+                <div class="slide fade">
+                    <img src="images/slide1.jpg" alt="Slide 1">
+                </div>
+                <div class="slide fade">
+                    <img src="images/slide2.jpg" alt="Slide 2">
+                </div>
+                <div class="slide fade">
+                    <img src="images/slide3.jpg" alt="Slide 3">
+                </div>
+                <!-- Дополнительные слайды -->
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>
+
         <div class="section" id="experience">
             <h2>Опыт работы</h2>
-            <div class="experience card">
+            <div class="experience">
                 <p><strong>Школа №1</strong> - Преподаватель математики (2015 - настоящее время)</p>
                 <p>Занимаюсь преподаванием математики для учеников средней и старшей школы, подготовка к экзаменам.</p>
                 <p><strong>Репетитор по математике</strong> (2010 - настоящее время)</p>
                 <p>Индивидуальные занятия по математике, подготовка к олимпиадам и ЕГЭ.</p>
             </div>
         </div>
-        <div class="section-divider"></div>
+
         <div class="section" id="portfolio">
             <h2>Портфолио</h2>
             <div class="portfolio">
-                <div class="card">
-                    <p><strong>Проект 1:</strong> Онлайн курс по алгебре</p>
-                    <img src="images/1.jpg" alt="Онлайн курс по алгебре">
-                </div>
-                <div class="card">
-                    <p><strong>Проект 2:</strong> Учебные материалы для подготовки к ЕГЭ</p>
-                    <img src="images/2.jpg" alt="Учебные материалы для подготовки к ЕГЭ">
-                </div>
-                <div class="card">
-                    <p><strong>Проект 3:</strong> Видеоуроки по геометрии</p>
-                    <img src="images/3.jpg" alt="Видеоуроки по геометрии">
-                </div>
+                <p><strong>Проект 1:</strong> Онлайн курс по алгебре</p>
+                <p><strong>Проект 2:</strong> Учебные материалы для подготовки к ЕГЭ</p>
+                <p><strong>Проект 3:</strong> Видеоуроки по геометрии</p>
             </div>
         </div>
-        <div class="section-divider"></div>
+
         <div class="section" id="contact">
             <h2>Контакты</h2>
             <div class="contact">
-                <p>Email: <a href="mailto:a007a2000@gmail.com">a007a2000@gmail.com</a></p>
+                <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
                 <p>Телефон: <a href="tel:+79878141021">+79878141021</a></p>
-                <!-- Иконки для Telegram и WhatsApp -->
                 <div class="social-icons">
                     <a href="https://t.me/mariehast" target="_blank"><img src="images/icontelegram.png" alt="Telegram"></a>
-                    <a href="https://wa.me/79878141021" target="_blank"><img src="images/whatsapp.png" alt="WhatsApp"></a>
+                    <a href="https://wa.me/+79878141021" target="_blank"><img src="images/whatsapp.png" alt="WhatsApp"></a>
                 </div>
+                
                 <!-- Форма обратной связи -->
                 <form action="https://formspree.io/f/mpzvvnop" method="POST">
                     <label for="name">Имя:</label><br>
@@ -77,12 +69,12 @@
                     <textarea id="message" name="message" rows="4" required></textarea><br>
                     <button type="submit">Отправить</button>
                 </form>
-
             </div>
         </div>
     </div>
     <footer>
-        <p>&copy; 2024 Марина Столярова +79878141021 </p>
+        <p>&copy; 2024 Ваше Имя</p>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
