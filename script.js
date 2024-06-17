@@ -1,26 +1,30 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const links = document.querySelectorAll('nav ul li a');
-    for (const link of links) {
-        link.addEventListener('click', smoothScroll);
-    }
 
-    function smoothScroll(event) {
-        event.preventDefault();
-        const targetId = event.currentTarget.getAttribute('href').substring(1);
-        const targetSection = document.getElementById(targetId);
-        targetSection.scrollIntoView({
-            behavior: 'smooth'
+document.addEventListener('DOMContentLoaded', function() {
+    // Slider functionality
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slider img');
+    
+    function showSlide(index) {
+        slides.forEach((slide) => {
+            slide.classList.remove('active');
         });
+        slides[index].classList.add('active');
     }
+    
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }
+    
+    // Auto slide change every 5 seconds
+    setInterval(nextSlide, 5000);
 
-    // Image Slider
-    let currentIndex = 0;
-    const images = document.querySelectorAll('.slider img');
-    images[currentIndex].classList.add('active');
-
-    setInterval(() => {
-        images[currentIndex].classList.remove('active');
-        currentIndex = (currentIndex + 1) % images.length;
-        images[currentIndex].classList.add('active');
-    }, 3000);
+    // Smooth scrolling for nav links
+    $('nav ul li a').on('click', function(e) {
+        e.preventDefault();
+        const target = $(this).attr('href');
+        $('html, body').animate({
+            scrollTop: $(target).offset().top
+        }, 1000);
+    });
 });
