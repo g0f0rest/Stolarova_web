@@ -1,0 +1,112 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f0f0;
+    color: #333333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: url('background-image.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+header {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInDown 1s forwards;
+}
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    color: #1e88e5;
+}
+header p {
+    font-size: 1.2em;
+    margin-top: 10px;
+    color: #666666;
+}
+.container {
+    flex: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.section {
+    margin-bottom: 60px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+    animation-delay: 0.5s;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+}
+.section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #1e88e5;
+    position: relative;
+}
+.section h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #1e88e5;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+}
+.experience, .portfolio, .contact {
+    margin-top: 20px;
+}
+.experience p, .portfolio p {
+    margin: 10px 0;
+    font-size: 1.1em;
+}
+.portfolio p {
+    padding-left: 20px;
+    position: relative;
+}
+.portfolio p::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #1e88e5;
+    font-size: 1.5em;
+}
+.contact a {
+    color: #1e88e5;
+    text-decoration: none;
+    font-weight: bold;
+}
+.contact a:hover {
+    text-decoration: underline;
+}
+footer {
+    background: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+    animation-delay: 0.5s;
+}
+@keyframes fadeInDown {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
