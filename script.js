@@ -1,18 +1,16 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const sections = document.querySelectorAll('.section');
+// script.js
+document.addEventListener('DOMContentLoaded', () => {
+    const links = document.querySelectorAll('nav ul li a');
+    for (const link of links) {
+        link.addEventListener('click', smoothScroll);
+    }
 
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.animation = `fadeInUp 1s forwards`;
-                observer.unobserve(entry.target);
-            }
+    function smoothScroll(event) {
+        event.preventDefault();
+        const targetId = event.currentTarget.getAttribute('href').substring(1);
+        const targetSection = document.getElementById(targetId);
+        targetSection.scrollIntoView({
+            behavior: 'smooth'
         });
-    }, {
-        threshold: 0.1
-    });
-
-    sections.forEach(section => {
-        observer.observe(section);
-    });
+    }
 });

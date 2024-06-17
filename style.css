@@ -1,113 +1,93 @@
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f0f0f0;
-    color: #333333;
+/* Reset some default styles */
+body, h1, h2, p, ul {
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    overflow-x: hidden;
-    background: url('background-image.jpg') no-repeat center center fixed;
-    background-size: cover;
 }
+
+body {
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    background-color: #1e1e1e;
+    line-height: 1.6;
+}
+
 header {
-    background: rgba(255, 255, 255, 0.9);
-    padding: 40px 20px;
+    background: linear-gradient(to right, #ff6f61, #d84315);
+    padding: 20px 0;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    transform: translateY(-20px);
-    animation: fadeInDown 1s forwards;
 }
-header h1 {
+
+header .header-content h1 {
     margin: 0;
     font-size: 2.5em;
-    color: #1e88e5;
 }
-header p {
+
+header .header-content p {
+    margin: 10px 0 0;
     font-size: 1.2em;
-    margin-top: 10px;
-    color: #666666;
 }
+
+nav {
+    background: #333;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
 .container {
-    flex: 1;
-    max-width: 800px;
+    padding: 20px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
 }
+
 .section {
-    margin-bottom: 60px;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1s forwards;
-    animation-delay: 0.5s;
-    background: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    border-radius: 10px;
+    margin-bottom: 40px;
 }
+
 .section h2 {
     font-size: 2em;
     margin-bottom: 20px;
-    color: #1e88e5;
-    position: relative;
 }
-.section h2::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 3px;
-    background-color: #1e88e5;
-    position: absolute;
-    left: 0;
-    bottom: -10px;
-}
-.experience, .portfolio, .contact {
-    margin-top: 20px;
-}
-.experience p, .portfolio p {
+
+.experience p,
+.portfolio p,
+.contact p {
     margin: 10px 0;
-    font-size: 1.1em;
-}
-.portfolio p {
-    padding-left: 20px;
-    position: relative;
-}
-.portfolio p::before {
-    content: '•';
-    position: absolute;
-    left: 0;
-    color: #1e88e5;
-    font-size: 1.5em;
-}
-.contact {
-    margin-top: 20px;
 }
 
-form {
-    margin-bottom: 20px;
-}
-
-form label {
-    display: block;
-    margin-bottom: 5px;
-}
-img {
+.portfolio img {
     max-width: 100%;
     height: auto;
     display: block;
     margin: 10px 0;
 }
 
-.social-icons img {
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
+.contact form {
+    margin-top: 20px;
 }
 
-form input[type="text"],
-form input[type="email"],
-form textarea {
+.contact form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.contact form input[type="text"],
+.contact form input[type="email"],
+.contact form textarea {
     width: 100%;
     padding: 8px;
     margin-bottom: 10px;
@@ -116,8 +96,8 @@ form textarea {
     box-sizing: border-box;
 }
 
-form input[type="submit"] {
-    background-color: #4CAF50;
+.contact form button {
+    background-color: #ff6f61;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -125,8 +105,12 @@ form input[type="submit"] {
     cursor: pointer;
 }
 
+.contact form button:hover {
+    background-color: #d84315;
+}
+
 .social-icons {
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .social-icons img {
@@ -135,28 +119,27 @@ form input[type="submit"] {
     margin-right: 10px;
 }
 
-.contact a:hover {
-    text-decoration: underline;
-}
 footer {
-    background: rgba(255, 255, 255, 0.9);
+    background: #333;
+    color: white;
     text-align: center;
-    padding: 20px;
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1s forwards;
-    animation-delay: 0.5s;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
 }
-@keyframes fadeInDown {
-    to {
-        opacity: 1;
-        transform: translateY(0);
+
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
     }
-}
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
+
+    header .header-content h1 {
+        font-size: 2em;
+    }
+
+    header .header-content p {
+        font-size: 1em;
     }
 }
