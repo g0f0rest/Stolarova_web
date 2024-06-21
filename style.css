@@ -5,18 +5,17 @@ body, h1, h2, p, ul {
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: B612, sans-serif;
     color: #333;
     background-color: #f4f4f4;
-    line-height: 2.5;
-    background-image: url('images/background.jpg');
-    background-size: cover; /* Растягиваем изображение на всю область фона */
-    background-position: center; /* Центрируем изображение */
-    padding: 0px 0;
+    line-height: 1.8;
+    background-image: url('images/background6.png');
+    background-attachment: fixed;
+    padding: 0x 0;
 }
 
 header {
-    background: linear-gradient(to right, #ff6f61, #d84315);
+    background-image: url('images/background1.jpg');
     padding: 20px 0;
     text-align: center;
 }
@@ -112,10 +111,11 @@ header p {
 
 footer {
     background: #333;
+    background-image: url('images/background1.jpg');
     color: white;
     text-align: center;
-    padding: 10px 0;
-    position: relative;
+    padding: 5px 0;
+    position: sticky;
     width: 100%;
     bottom: 0;
 }
