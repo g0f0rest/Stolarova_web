@@ -328,4 +328,83 @@ footer {
     .contact form button {
         width: auto;
     }
+/* Общие стили для виджета комментариев */
+.sig-comments-widget {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.sig-comments-widget h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #d84315;
+    padding-bottom: 5px;
+}
+
+.sig-comments-widget p {
+    margin: 10px 0;
+}
+
+.sig-comments-widget input[type="text"], .sig-comments-widget textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.sig-comments-widget button {
+    background-color: #ff6f61;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.sig-comments-widget button:hover {
+    background-color: #d84315;
+}
+
+/* Стили для комментариев */
+.sig-comments-widget .comment {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.sig-comments-widget .comment:last-child {
+    border-bottom: none;
+}
+
+.sig-comments-widget .comment .author {
+    font-weight: bold;
+    color: #333;
+}
+
+.sig-comments-widget .comment .text {
+    color: #666;
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 600px) {
+    .sig-comments-widget {
+        padding: 10px;
+    }
+
+    .sig-comments-widget h3 {
+        font-size: 1.2em;
+    }
+
+    .sig-comments-widget button {
+        padding: 8px 16px;
+    }
+}
+
 }
