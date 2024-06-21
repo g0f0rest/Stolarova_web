@@ -373,22 +373,31 @@ footer {
     background-color: #d84315;
 }
 
-/* Стили для комментариев */
-.sig-comments-widget .comment {
-    border-bottom: 1px solid #ddd;
+/* Стили для контейнера комментариев */
+#sig-comments-container {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+#sig-comments-container .comment {
+    border-bottom: 1px solid #eee;
     padding: 10px 0;
 }
 
-.sig-comments-widget .comment:last-child {
+#sig-comments-container .comment:last-child {
     border-bottom: none;
 }
 
-.sig-comments-widget .comment .author {
+#sig-comments-container .comment .author {
     font-weight: bold;
     color: #333;
 }
 
-.sig-comments-widget .comment .text {
+#sig-comments-container .comment .text {
     color: #666;
 }
 
@@ -405,6 +414,4 @@ footer {
     .sig-comments-widget button {
         padding: 8px 16px;
     }
-}
-
 }
