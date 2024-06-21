@@ -13,23 +13,20 @@
     </header>
     <div class="container">
         <!-- Слайдер -->
-        <div class="slider">
-            <div class="slider-container">
-                <div class="slide fade">
-                    <img src="images/1.jpg" alt="Slide 1">
-                </div>
-                <div class="slide fade">
-                    <img src="images/2.jpg" alt="Slide 2">
-                </div>
-                <div class="slide fade">
-                    <img src="images/3.jpg" alt="Slide 3">
-                </div>
-                <!-- Дополнительные слайды -->
+        <div class="slider" id="slider">
+            <div class="slides">
+                <div class="slide"><img src="images/1.jpg" alt="Image 1"></div>
+                <div class="slide"><img src="images/2.jpg" alt="Image 2"></div>
+                <div class="slide"><img src="images/3.jpg" alt="Image 3"></div>
+                <div class="slide"><img src="images/4.jpg" alt="Image 4"></div>
+                <div class="slide"><img src="images/5.jpg" alt="Image 5"></div>
             </div>
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            <div class="controls">
+                <span class="prev">&#10094;</span>
+                <span class="next">&#10095;</span>
+            </div>
         </div>
-
+        
         <div class="section" id="experience">
             <h2>Опыт работы</h2>
             <div class="experience">
@@ -39,7 +36,6 @@
                 <p>Индивидуальные занятия по математике, подготовка к олимпиадам и ЕГЭ.</p>
             </div>
         </div>
-
         <div class="section" id="portfolio">
             <h2>Портфолио</h2>
             <div class="portfolio">
@@ -48,7 +44,6 @@
                 <p><strong>Проект 3:</strong> Видеоуроки по геометрии</p>
             </div>
         </div>
-
         <div class="section" id="contact">
             <h2>Контакты</h2>
             <div class="contact">
@@ -58,7 +53,6 @@
                     <a href="https://t.me/mariehast" target="_blank"><img src="images/icontelegram.png" alt="Telegram"></a>
                     <a href="https://wa.me/+79878141021" target="_blank"><img src="images/whatsapp.png" alt="WhatsApp"></a>
                 </div>
-                
                 <!-- Форма обратной связи -->
                 <form action="https://formspree.io/f/mpzvvnop" method="POST">
                     <label for="name">Имя:</label><br>
@@ -73,7 +67,7 @@
         </div>
     </div>
     <footer>
-        <p>&copy; 2024 Ваше Имя</p>
+        <p>&copy; 2024 Марина Столярова</p>
     </footer>
     <script src="script.js"></script>
 </body>
