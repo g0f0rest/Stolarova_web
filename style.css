@@ -54,9 +54,7 @@ header p {
     padding-bottom: 10px;
 }
 
-.experience p,
-.portfolio p,
-.contact p {
+.experience p, .portfolio p, .contact p, .pricing-plan p {
     margin: 10px 0;
 }
 
@@ -76,9 +74,7 @@ header p {
     margin-bottom: 5px;
 }
 
-.contact form input[type="text"],
-.contact form input[type="email"],
-.contact form textarea {
+.contact form input[type="text"], .contact form input[type="email"], .contact form textarea {
     width: 100%;
     padding: 8px;
     margin-bottom: 10px;
@@ -120,14 +116,13 @@ footer {
     bottom: 0;
 }
 
-/* Slider styles */
 .slider {
     position: relative;
-    width: 100%;
-    max-width: 1200px;
-    height: 400px;
+    max-width: 100%;
     margin: 20px auto;
     overflow: hidden;
+    border: 2px solid #ddd;
+    border-radius: 10px;
 }
 
 .slides {
@@ -142,8 +137,8 @@ footer {
 
 .slide img {
     width: 100%;
-    height: 400px;
-    object-fit: cover;
+    height: auto;
+    display: block;
 }
 
 .controls {
@@ -156,31 +151,47 @@ footer {
 }
 
 .controls span {
-    cursor: pointer;
-    font-size: 2em;
-    color: white;
-    padding: 0 10px;
     background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    cursor: pointer;
 }
 
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 2em;
-    }
+.pricing {
+    display: flex;
+    justify-content: space-around;
+}
 
-    header p {
-        font-size: 1em;
-    }
+.pricing-plan {
+    background: #fff;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    flex: 1;
+    margin: 0 10px;
+}
 
-    .slider {
-        height: 200px;
-    }
+.pricing-plan h3 {
+    margin-bottom: 10px;
+    color: #ff6f61;
+}
 
-    .slide img {
-        height: 200px;
-    }
+.testimonials {
+    margin-top: 20px;
+}
 
-    .controls span {
-        font-size: 1.5em;
-    }
+.testimonials .testimonial-list {
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+
+.testimonials form {
+    margin-top: 20px;
+}
+
+.testimonials form h3 {
+    margin-bottom: 10px;
+    color: #ff6f61;
 }
