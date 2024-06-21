@@ -286,9 +286,7 @@ footer {
     .contact form button {
         width: 100%;
     }
-
 }
-
 /* Стили для планшетов и больших экранов (ширина 769px и выше) */
 @media only screen and (min-width: 769px) {
     .container {
@@ -328,3 +326,4 @@ footer {
     .contact form button {
         width: auto;
     }
+}
