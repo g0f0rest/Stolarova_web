@@ -1,27 +1,36 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const slides = document.querySelectorAll(".slide");
-    let currentIndex = 0;
+    const initSlider = (sliderSelector, prevSelector, nextSelector, intervalTime) => {
+        const slides = document.querySelectorAll(`${sliderSelector} .slide, ${sliderSelector} .slide_otziv`);
+        let currentIndex = 0;
 
-    const showSlides = (index) => {
-        const slider = document.querySelector(".slides");
-        const slideWidth = slides[0].clientWidth;
-        slider.style.transform = `translateX(${-index * slideWidth}px)`;
+        const showSlides = (index) => {
+            const slider = document.querySelector(`${sliderSelector} .slides`);
+            const slideWidth = slides[0].clientWidth;
+            slider.style.transform = `translateX(${-index * slideWidth}px)`;
+        };
+
+        const changeSlide = (direction) => {
+            currentIndex += direction;
+            if (currentIndex >= slides.length) currentIndex = 0;
+            if (currentIndex < 0) currentIndex = slides.length - 1;
+            showSlides(currentIndex);
+        };
+
+        document.querySelector(prevSelector).addEventListener("click", () => changeSlide(-1));
+        document.querySelector(nextSelector).addEventListener("click", () => changeSlide(1));
+
+        if (intervalTime) {
+            setInterval(() => {
+                changeSlide(1);
+            }, intervalTime);
+        }
     };
 
-    const changeSlide = (direction) => {
-        currentIndex += direction;
-        if (currentIndex >= slides.length - 2) currentIndex = 0;
-        if (currentIndex < 0) currentIndex = slides.length - 3;
-        showSlides(currentIndex);
-    };
+    // Инициализация слайдеров
+    initSlider(".slider", ".slider .prev", ".slider .next", 15000);
+    initSlider("#slider-testimonials", "#slider-testimonials .prev", "#slider-testimonials .next");
 
-    document.querySelector(".prev").addEventListener("click", () => changeSlide(-1));
-    document.querySelector(".next").addEventListener("click", () => changeSlide(1));
-
-    setInterval(() => {
-        changeSlide(1);
-    }, 15000);
-
+    // Анимация при прокрутке
     const sections = document.querySelectorAll(".section");
 
     const checkVisibility = () => {
@@ -41,20 +50,23 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("scroll", checkVisibility);
     checkVisibility();
 
+    // Обработка формы отзывов
     const testimonialForm = document.getElementById("testimonial-form");
     const testimonialList = document.getElementById("testimonial-list");
 
-    testimonialForm.addEventListener("submit", (e) => {
-        e.preventDefault();
+    if (testimonialForm && testimonialList) {
+        testimonialForm.addEventListener("submit", (e) => {
+            e.preventDefault();
 
-        const name = document.getElementById("testimonial-name").value;
-        const testimonial = document.getElementById("testimonial").value;
+            const name = document.getElementById("testimonial-name").value;
+            const testimonial = document.getElementById("testimonial").value;
 
-        const testimonialItem = document.createElement("div");
-        testimonialItem.classList.add("testimonial-item");
-        testimonialItem.innerHTML = `<p><strong>${name}</strong></p><p>${testimonial}</p>`;
-        testimonialList.appendChild(testimonialItem);
+            const testimonialItem = document.createElement("div");
+            testimonialItem.classList.add("testimonial-item");
+            testimonialItem.innerHTML = `<p><strong>${name}</strong></p><p>${testimonial}</p>`;
+            testimonialList.appendChild(testimonialItem);
 
-        testimonialForm.reset();
-    });
+            testimonialForm.reset();
+        });
+    }
 });
