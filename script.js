@@ -25,7 +25,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }, intervalTime);
         }
     };
-
     // Инициализация слайдеров
     initSlider(".slider", ".slider .prev", ".slider .next", 15000);
     initSlider("#slider-testimonials", "#slider-testimonials .prev", "#slider-testimonials .next");
@@ -45,7 +44,32 @@ document.addEventListener("DOMContentLoaded", () => {
                 section.classList.remove("visible");
             }
         });
+
     };
+    // Получаем модальное окно и его элементы
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modal-img');
+    const closeModal = document.querySelector('.close');
+
+    // Для всех изображений на странице добавляем обработчик клика
+    document.querySelectorAll('img').forEach(img => {
+        img.addEventListener('click', function() {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+        });
+    });
+
+    // Закрываем модальное окно при клике на крестик
+    closeModal.addEventListener('click', function() {
+        modal.style.display = "none";
+    });
+
+    // Закрываем модальное окно при клике вне изображения
+    modal.addEventListener('click', function(event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    });
 
     window.addEventListener("scroll", checkVisibility);
     checkVisibility();
@@ -69,4 +93,5 @@ document.addEventListener("DOMContentLoaded", () => {
             testimonialForm.reset();
         });
     }
+
 });
