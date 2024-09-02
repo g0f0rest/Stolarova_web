@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }, intervalTime);
         }
     };
+
     // Инициализация слайдеров
     initSlider(".slider", ".slider .prev", ".slider .next", 15000);
     initSlider("#slider-testimonials", "#slider-testimonials .prev", "#slider-testimonials .next");
@@ -44,8 +45,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 section.classList.remove("visible");
             }
         });
-
     };
+
     // Получаем модальное окно и его элементы
     const modal = document.getElementById('modal');
     const modalImg = document.getElementById('modal-img');
@@ -53,21 +54,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Для всех изображений на странице добавляем обработчик клика
     document.querySelectorAll('img').forEach(img => {
-        img.addEventListener('click', function() {
+        const openModal = (event) => {
+            event.preventDefault(); // Предотвращаем стандартное поведение
             modal.style.display = "block";
-            modalImg.src = this.src;
-        });
+            modalImg.src = img.src;
+            document.body.style.overflow = 'hidden'; // Отключаем прокрутку страницы при открытом модальном окне
+        };
+        img.addEventListener('click', openModal);
+        img.addEventListener('touchstart', openModal);
     });
 
     // Закрываем модальное окно при клике на крестик
-    closeModal.addEventListener('click', function() {
+    closeModal.addEventListener('click', () => {
         modal.style.display = "none";
+        document.body.style.overflow = 'auto'; // Включаем прокрутку обратно при закрытии модального окна
     });
 
     // Закрываем модальное окно при клике вне изображения
-    modal.addEventListener('click', function(event) {
+    modal.addEventListener('click', (event) => {
         if (event.target === modal) {
             modal.style.display = "none";
+            document.body.style.overflow = 'auto'; // Включаем прокрутку обратно при закрытии модального окна
         }
     });
 
@@ -93,5 +100,4 @@ document.addEventListener("DOMContentLoaded", () => {
             testimonialForm.reset();
         });
     }
-
 });
