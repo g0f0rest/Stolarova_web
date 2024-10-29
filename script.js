@@ -55,6 +55,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // Для всех изображений на странице добавляем обработчик клика
     document.querySelectorAll('img').forEach(img => {
         const openModal = (event) => {
+            // Проверяем, если у изображения есть класс 'no-modal', то модальное окно не открывается
+            if (img.classList.contains('no-modal')) return;
+
             event.preventDefault(); // Предотвращаем стандартное поведение
             modal.style.display = "block";
             modalImg.src = img.src;
